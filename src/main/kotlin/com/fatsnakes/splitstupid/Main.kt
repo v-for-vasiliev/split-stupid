@@ -12,12 +12,10 @@ data class User(
     var balance: MonetaryAmount
 ) {
     fun isSatisfied() = balance.isZero
-    fun isCreditor() = balance.isNegative
     fun isBorrower() = balance.isPositive
 }
 
 val rur: CurrencyUnit = Monetary.getCurrency("RUR")
-val searchDelta: MonetaryAmount = Money.of(0.01, rur)
 
 val transactions = mutableListOf<String>()
 
